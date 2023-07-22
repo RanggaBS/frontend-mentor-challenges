@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Interactive Rating</title>
+	<link rel="stylesheet" href="style.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+</head>
+<body>
+	<main>
+		<div class="card card-rate">
+			<div class="icon-star">
+				<img src="images/icon-star.svg" alt="star">
+			</div>
+			
+			<p class="title">How did we do?</p>
+			<fieldset>
+				<legend>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</legend>
+				<div class="rating">
+					<!-- <input type="radio" name="rate" id="rating-1" value="1">
+					<input type="radio" name="rate" id="rating-2" value="2">
+					<input type="radio" name="rate" id="rating-3" value="3">
+					<input type="radio" name="rate" id="rating-4" value="4">
+					<input type="radio" name="rate" id="rating-5" value="5" checked> -->
+					
+					<button>1</button>
+					<button>2</button>
+					<button>3</button>
+					<button>4</button>
+					<button>5</button>
+				</div>
+			</fieldset>
+
+			<button class="btn-submit">SUBMIT</button>
+		</div>
+		<div class="card card-thank" style="display: none;">
+			<img src="images/illustration-thank-you.svg" alt="Thank you!">
+
+			<div class="rating-selected">
+				<p>You selected <span id="user-rate"></span> out of 5</p>
+			</div>
+
+			<p class="thankyou">
+				<span class="title">Thank you!</span>
+				We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!
+			</p>
+		</div>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>

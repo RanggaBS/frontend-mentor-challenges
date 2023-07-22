@@ -1,0 +1,155 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+	margin: 0;
+}
+/*
+Typographic tweaks!
+3. Add accessible line-height
+4. Improve text rendering
+*/
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+/*
+5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+}
+/*
+6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+	font: inherit;
+}
+/*
+7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+	overflow-wrap: break-word;
+}
+
+
+/* Project styles */
+:root {
+	--color-primary: hsl(158, 36%, 37%);
+	--color-secondary: hsl(30, 38%, 92%);
+
+	--color-neutral-very_dark_blue: hsl(212, 21%, 14%);
+	--color-neutral-dark_grayish_blue: hsl(228, 12%, 48%);
+	--color-neutral-white: hsl(0, 0%, 100%);
+
+	--font-accent: 'Fraunces', serif;
+	--font-base: 'Montserrat', sans-serif;
+
+	--font-regular: 500;
+	--font-bold: 700;
+}
+
+body {
+	background-color: var(--color-secondary);
+	min-height: 100vh;
+	margin: 1rem;
+
+	font-family: var(--font-base);
+	font-weight: var(--font-regular);
+	font-size: 0.875rem;
+	
+	display: grid;
+	place-content: center;
+	
+	overflow: hidden;
+}
+
+.product {
+	--content-padding: 1.5rem;
+	--content-spacing: 1rem;
+
+	background-color: white;
+	border-radius: 0.5rem;
+	overflow: hidden;
+
+	display: grid;
+	max-width: 600px;
+}
+
+@media (min-width: 600px) {
+	.product {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.product-content {
+	padding: var(--content-padding);
+	display: grid;
+	gap: var(--content-spacing);
+}
+
+.product-category {
+	letter-spacing: 0.5rem;
+}
+
+.product-title {
+	font-family: var(--font-accent);
+	font-size: 2rem;
+	
+	line-height: 2rem;
+}
+
+/* Product - price */
+.product-content div {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+
+	font-family: var(--font-accent);
+	font-weight: var(--font-bold);
+}
+.product-content div p.product-price {
+	color: var(--color-primary);
+
+	font-size: 2rem;
+}
+.product-content div p.product-price-original {
+	text-decoration: line-through;
+	font-weight: var(--font-regular);
+}
+
+/* Product - "Add to cart" button */
+.product-add_to_cart {
+	background-color: var(--color-primary);
+	color: white;
+
+	font-weight: var(--font-bold);
+
+	padding: 0.75rem;
+
+	border: none;
+	border-radius: 0.5rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+
+	transition: background-color 0.15s;
+}
+
+.product-add_to_cart:is(:hover, :focus) {
+	background-color: hsl(158, 36%, 23%);
+}
+
+.product-add_to_cart img {
+	display: inline;
+}

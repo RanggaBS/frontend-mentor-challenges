@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/*
+	1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+/*
+	2. Remove default margin
+*/
+* {
+margin: 0;
+}
+/*
+	Typographic tweaks!
+	3. Add accessible line-height
+	4. Improve text rendering
+*/
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+/*
+	5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+}
+/*
+	6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+	font: inherit;
+}
+/*
+	7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+	overflow-wrap: break-word;
+}
+
+
+/* Styles */
+:root {
+	/* Layout */
+	--layout-width-mobile: 375px;
+	--layout-width-desktop: 1440px;
+
+	/* Colors */
+		/* Primary */
+		--color-primary-red: hsl(0, 100%, 74%);
+		--color-primary-green: hsl(154, 59%, 51%);
+
+		/* Accent */
+		--color-accent-blue: hsl(248, 32%, 49%);
+
+		/* Neutral */
+		--color-neutral-dark_blue: hsl(249, 10%, 26%);
+		--color-neutral-grayish_blue: hsl(246, 25%, 77%);
+
+	/* Typography */
+		/* Body Copy */
+		/* --font-size: 16px; */
+
+		/* Font */
+		--font-family: "Poppins", sans-serif;
+}
+
+body {
+	/* height: 100vh; */
+	font-family: var(--font-family);
+	color: white;
+	
+	background: var(--color-primary-red) url("images/bg-intro-mobile.png");
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main {
+	min-width: var(--layout-width-mobile);
+	/* height: 100vh; */
+	/* overflow: hidden; */
+
+	padding: 2rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	/* align-items: center; */
+	gap: 1.75rem;
+}
+
+/* Heading */
+header {
+	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1.75rem;
+
+	padding-top: 3rem;
+}
+h1.title {
+	padding: 0 1rem 0 1rem;
+	
+	line-height: 1.25;
+}
+p.desc {
+	line-height: 1.75;
+
+	font-weight: 400;
+
+	/* margin-bottom: 3rem; */
+}
+
+/* Promo Button */
+button.promo {
+	--bottom-shadow: .5rem;
+
+	width: 100%;
+
+	background-color: var(--color-accent-blue);
+	color: white;
+
+	cursor: pointer;
+
+	border: none;
+	border-radius: .5rem;
+
+	padding: 1rem 3rem;
+	
+	box-shadow: 0 var(--bottom-shadow) rgba(0, 0, 0, .2);
+
+	font-weight: 400;
+
+	margin-bottom: 1.5rem;
+}
+button.promo span {
+	font-weight: 700;
+}
+button.promo:is(:hover, :focus) {
+	transform: translateY(var(--bottom-shadow));
+	box-shadow: none;
+
+	background-color: hsl(248, 32%, 40%);
+}
+
+/* Form */
+form {
+	--form-bottom-shadow: .5rem;
+
+	background-color: white;
+
+	border-radius: .5rem;
+
+	padding: 1.5rem;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+
+	box-shadow: 0 var(--form-bottom-shadow) rgba(0, 0, 0, .2);
+}
+form input[type="text"], form input[type="email"], form input[type="password"] {
+	width: 100%;
+	border: .15rem solid var(--color-neutral-grayish_blue);
+	border-radius: .5rem;
+
+	padding: 1rem;
+
+	font-weight: 600;
+}
+form input[type="text"]:focus, form input[type="email"]:focus, form input[type="password"]:focus {
+	border: .15rem solid var(--color-accent-blue);
+	outline: none;
+}
+
+/* Claim button */
+form input[type="submit"] {
+	--button-bottom-shadow: .25rem;
+
+	background-color: var(--color-primary-green);
+
+	border: none;
+	border-radius: .5rem;
+
+	color: white;
+	font-weight: 500;
+
+	box-shadow: 0 var(--button-bottom-shadow) hsl(154, 59%, 40%);
+
+	padding: 1rem 0;
+
+	letter-spacing: 1px;
+}
+form input[type="submit"]:is(:hover, :focus) {
+	transform: translateY(var(--button-bottom-shadow));
+	box-shadow: none;
+	background-color: hsl(154, 59%, 40%);
+}
+
+/* Terms & Services */
+form p.terms {
+	color: var(--color-neutral-grayish_blue);
+
+	text-align: center;
+	font-size: .75rem;
+}
+form p strong a {
+	color: var(--color-primary-red);
+	
+	text-decoration: none;
+}
+
+
+/* Input error message */
+div.error input[type="text"], div.error input[type="email"], div.error input[type="password"] {
+	color: var(--color-primary-red);
+}
+div.error span {
+	display: block;
+
+	padding-top: .25rem;
+
+	color: var(--color-primary-red);
+	
+	text-align: end;
+	
+	font-style: italic;
+	font-size: .75rem;
+	font-weight: 500;
+}
+
+
+/* Desktop view */
+@media screen and (min-width: 768px) {
+	:root {
+		font-size: 12px;
+	}
+
+	body {
+		height: 100vh;
+
+		background: var(--color-primary-red) url("images/bg-intro-desktop.png");
+
+		padding: 10rem;
+	}
+
+	main {
+		max-width: 1440px;
+
+		display: flex;
+		flex-direction: row;
+		/* justify-content: center; */
+		align-items: center;
+		gap: 2rem;
+		
+		/* height: auto; */
+	}
+
+	header {
+		width: calc(var(--layout-width-desktop) / 2 - 12rem);
+
+		text-align: left;
+
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	header h1.title {
+		padding: 0;
+
+		font-size: 3.5rem;
+	}
+
+	header p.desc {
+		font-size: 1.35rem;
+	}
+
+	div.trial {
+		width: calc(var(--layout-width-desktop) / 2 - 12rem);
+		max-width: var(--layout-width-desktop);
+	}
+
+	form {
+		padding: 2rem;
+	}
+}

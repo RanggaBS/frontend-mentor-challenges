@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Age Calculator</title>
+
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+	<main>
+		<div class="card">
+			<form name="form-birth_date" action="">
+
+				<div class="div-birth_date_form">
+					<div class="div-day">
+						<label for="day">DAY</label>
+						<!-- <input type="number" id="day" placeholder="DD" min="1" max="31"> -->
+						<input type="number" id="day" placeholder="DD">
+					</div>
+
+					<div class="div-month">
+						<label for="month">MONTH</label>
+						<!-- <input type="number" id="month" placeholder="MM" min="1" max="12"> -->
+						<input type="number" id="month" placeholder="MM">
+					</div>
+
+					<div class="div-year">
+						<label for="year">YEAR</label>
+						<!-- <input type="number" id="year" placeholder="YYYY" min="1900"> -->
+						<input type="number" id="year" placeholder="YYYY">
+					</div>
+				</div>
+
+				<div class="div-button">
+					<button type="submit" class="button-submit">
+						<img src="images/icon-arrow.svg" alt="submit">
+					</button>
+				</div>
+			</form>
+			
+			<hr>
+
+			<div class="output">
+				<p class="years">
+					<span>--</span> years
+				</p>
+
+				<p class="months">
+					<span>--</span> months
+				</p>
+				
+				<p class="days">
+					<span>--</span> days
+				</p>
+			</div>
+		</div>
+	</main>
+	
+	<script src="script.js"></script>
+</body>
+</html>

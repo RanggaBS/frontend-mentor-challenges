@@ -1,0 +1,219 @@
+/*
+	1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+/*
+	2. Remove default margin
+*/
+* {
+	margin: 0;
+}
+/*
+	Typographic tweaks!
+	3. Add accessible line-height
+	4. Improve text rendering
+*/
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+/*
+	5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+}
+/*
+	6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+	font: inherit;
+}
+/*
+	7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+	overflow-wrap: break-word;
+}
+
+
+/* Project styles */
+:root {
+	--Primary: hsl(25, 97%, 53%);
+	--White: hsl(0, 0%, 100%);
+	--Light-Grey: hsl(217, 12%, 63%);
+	--Medium-Grey: hsl(216, 12%, 54%);
+	--Dark-Blue: hsl(221deg 20% 17%);
+	--Very-Dark-Blue: hsl(212deg 28% 12%);
+	--BG-Gradient: linear-gradient(180deg, var(--Dark-Blue), var(--Very-Dark-Blue));
+
+	--ff: "Overpass", sans-serif;
+}
+
+main {
+	background: rgba(0, 0, 0, .9);
+	
+	height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	font-family: var(--ff);
+}
+
+.card {
+	max-width: 340px;
+	max-height: 350px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+
+	background: var(--BG-Gradient);
+	color: white;
+
+	padding: 2rem;
+
+	border-radius: 2rem;
+}
+
+.card-thank {
+	align-items: center;
+}
+
+.icon-star {
+	width: 2.5rem;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+
+	background-color: hsla(25, 7%, 70%, .1);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: .5rem;
+}
+
+.card img {
+	width: max-content;
+}
+
+.title {
+	font-size: 1.2rem;
+}
+
+.thankyou .title {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+
+	display: flex;
+	flex-direction: column;
+}
+
+fieldset legend {
+	padding: 0;
+
+	color: var(--Light-Grey);
+	font-size: 0.8rem;
+}
+
+.rating {
+	display: flex;
+	justify-content: space-between;
+
+	padding: 1rem 0 0 0;
+}
+
+.rating button {
+	cursor: pointer;
+	
+	width: 2.5rem;
+	/* height: 2rem; */
+	aspect-ratio: 1 / 1;
+
+	background: rgba(255, 255, 255, 0.1);
+	color: var(--Light-Grey);
+	
+	border: none;
+	border-radius: 50%;
+	appearance: none;
+
+	transition: background-color .15s;
+}
+
+.rating button:hover {
+	background-color: var(--Primary);
+	color: white;
+}
+
+.rating button:focus {
+	background-color: var(--Light-Grey);
+	color: white;
+}
+
+.btn-submit {
+	background-color: var(--Primary);
+	color: white;
+
+	padding: 0.25rem;
+	
+	cursor: pointer;
+
+	border: none;
+	border-radius: 1rem;
+
+	transition: background-color .15s;
+}
+
+.btn-submit:is(:hover, :focus) {
+	background-color: white;
+	color: var(--Primary);
+}
+
+.rating-selected {
+	border-radius: 2rem;
+
+	background-color: rgba(255, 255, 255, 0.1);
+	color: var(--Primary);
+
+	font-size: 0.875rem;
+
+	padding: .25rem 1rem;
+}
+
+.card, .card-thank {
+	gap: 1rem;
+
+	padding: 1.5rem;
+}
+
+.thankyou {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: .5rem;
+
+	text-align: center;
+
+	color: var(--Light-Grey);
+
+	font-size: 0.8rem;
+}
+
+.thankyou span.title {
+	display: block;
+
+	color: white;
+
+	font-size: 1.55rem;
+}
