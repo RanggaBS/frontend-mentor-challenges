@@ -1,0 +1,79 @@
+/* Logo and social medias */
+div.logo-and-social_medias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+a.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+}
+ul.social_media-list {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+}
+ul.social_media-list li {
+  width: 100%;
+}
+
+
+/* Button-like anchor */
+a[role="button"], button[type="submit"] {
+  color: var(--color-white);
+  
+  display: inline-block;
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  padding-block-end: .625rem;
+  border: none;
+  border-bottom: 2px solid var(--color-green);
+  
+  height: 100%;
+
+  /* text animation */
+  color: transparent;
+  background: linear-gradient(90deg, var(--color-green) 50%, var(--color-white) 50%);
+  -webkit-background-clip: text;
+  background-size: 200%;
+  background-position: right;
+  transition: background-position .5s;
+}
+button[type="submit"] {
+  /* color: inherit; */
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Button/link text animation */
+a[role="button"]:hover, button[type="submit"]:hover {
+  background-position: left;
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: .75rem;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-black);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-green);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4cc58d
+}
+
+
+/* not used */
+.horizontal-line-top {
+  border-top: 1px solid var(--color-white);
+}
+.horizontal-line-bottom {
+  border-bottom: 1px solid var(--color-white);
+}
