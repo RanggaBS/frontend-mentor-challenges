@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Advice Generator app</title>
+
+	<link rel="stylesheet" href="src/styles/main.css">
+	<!-- <link rel="stylesheet" href="src/input.css"> -->
+
+	<!-- Tailwind CSS -->
+	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+	<script src="src/scripts/tailwindcss_v3.3.3.js"></script>
+	<!-- <script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						clifford: "#da373d",
+					}
+				}
+			}
+		} -->
+	</script>
+</head>
+<body>
+	<div class="loading">
+		<svg class="spinner" viewBox="0 0 50 50">
+			<circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+		</svg>
+	</div>
+	<main>
+		<div class="container w-full max-w-full h-screen flex justify-center items-center">
+			<div class="card-container w-[90%] max-w-lg px-8 flex flex-col items-center rounded-xl relative">
+				<blockquote class="quote-container text-center pt-12 pb-2">
+					<h1 class="quote-title font-semibold uppercase tracking-[.25em] pb-4">Advice <span class="quote-id">#117</span></h1>
+					<q class="quote-text pt-4">It is easy to sit up and take notice, what's difficult is getting up and taking action.</q>
+				</blockquote>
+				<picture class="quote-divider pt-4 pb-12 w-full">
+					<source srcset="assets/images/pattern-divider-desktop.svg" media="(min-width: 768px)">
+					<img src="assets/images/pattern-divider-mobile.svg" alt="" class="w-full">
+				</picture>
+				<button type="button" class="dice-btn w-12 aspect-square rounded-full flex justify-center items-center absolute -bottom-6">
+					<img src="assets/images/icon-dice.svg" alt="Dice - Randomize the quote" class="w-[40%]">
+				</button>
+			</div>
+		</div>
+	</main>
+
+	<script defer src="src/scripts/main.js"></script>
+</body>
+</html>
